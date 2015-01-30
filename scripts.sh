@@ -44,7 +44,7 @@ function find_changelog_file(){
 }
 
 function find_last_git_tag(){
-  echo $(git describe --abbrev=0 --tags)
+  echo $(git tag -l | sort -V | tail -n 1)
 }
 
 # based on https://github.com/tj/git-extras/blob/master/bin/git-changelog
